@@ -3,10 +3,8 @@ package modelos;
 // ▶ Importaciones ─────────────────────────────────────────────────────────────────────────────────────────────────────
 import interfaces.IGrafo;
 import interfaces.INodo;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
+import java.util.*;
 
 public class Grafo<T extends Comparable<T>> implements IGrafo<T> {
 
@@ -36,11 +34,33 @@ public class Grafo<T extends Comparable<T>> implements IGrafo<T> {
 
         System.out.println();
     }
-
+    /** Método  para el recorrido por anchura. */
     @Override
     public void recorrerBFS(INodo inicio) {
+        Set<T> visitados = new HashSet<>();
+        Queue<INodo<T>> cola = new LinkedList<>();
 
+        cola.add(inicio);
+        visitados.add((T) inicio.getDato());
+
+        System.out.println("Recorrido BFS:");
+        while (!cola.isEmpty()) {
+            INodo<T> actual = cola.poll();
+            System.out.print(actual.getDato() + " ");
+
+            for (INodo<T> vecino : actual.getVecinos()) {
+                T val = vecino.getDato();
+                if (!visitados.contains(val)) {
+                    visitados.add(val);
+                    cola.add(vecino);
+                }
+            }
+        }
+        System.out.println();
     }
+
+
+
 
     // ▶ Recursivos
     /** Método recursivo para el recorrido por profundidad. */
@@ -56,6 +76,8 @@ public class Grafo<T extends Comparable<T>> implements IGrafo<T> {
             }
         }
     }
+
+
 
     // ▶ Otros
     /** Método para agregar un nodo genérico al grafo. */
