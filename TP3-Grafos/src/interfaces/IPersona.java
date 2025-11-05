@@ -1,14 +1,20 @@
 package interfaces;
 
+// ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
 public interface IPersona {
 
     // ▶ Getters ───────────────────────────────────────────────────────────────────────────────────────────────────────
-    public String getNombre()   ;
-    public String getDNI()      ;
+    String getDNI()                  ;
+    String getNombre()               ;
 
     // ▶ Setters ───────────────────────────────────────────────────────────────────────────────────────────────────────
-    public void setNombre(String nombre)    ;
-    public void setDNI(String DNI)          ;
+    void setDNI(String DNI)          ;
+    void setNombre(String nombre)    ;
+
+    // ▶ Otros Métodos ─────────────────────────────────────────────────────────────────────────────────────────────────
+    boolean equals(Object obj)       ;
+    int hashCode()                   ;
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 }

@@ -1,21 +1,30 @@
 package interfaces;
 
 // ▶ Importaciones ─────────────────────────────────────────────────────────────────────────────────────────────────────
-import modelos.Nodo     ;
-import java.util.List   ;
+import java.util.List;
+import java.util.Map    ;
 
-public interface IGrafo<T extends Comparable<T>> {
+// ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+public interface IGrafo<T> {
 
     // ▶ Getters ───────────────────────────────────────────────────────────────────────────────────────────────────────
-    public List<Nodo<T>> getNodos() ;
+    Map<T, INodo<T>> getNodos()                         ;
+    INodo<T> getDato(T dato)                            ;
 
-    // ▶ Recorridos ────────────────────────────────────────────────────────────────────────────────────────────────────
-    public void recorrerDFS(INodo<T> inicio)    ;
-    public void recorrerBFS(INodo<T> inicio)    ;
+    // ▶ Setters ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
-    // ▶ Otros ─────────────────────────────────────────────────────────────────────────────────────────────────────────
-    public void agregarNodo(INodo<T> nodo)                      ;
-    public void conectarNodos(INodo<T> nodo1, INodo<T> nodo2)   ;
+    // ▶ Otros Métodos ─────────────────────────────────────────────────────────────────────────────────────────────────
+
+    // ▶ Funcionamiento Básico
+    void agregarNodo(T dato)                            ;
+    void conectarNodos(INodo<T> nodo1, INodo<T> nodo2)  ;
+    int[][] matrizAdyacencia()                          ;
+    Map<T, List<T>> listaAdyacencia()                   ;
+
+    // ▶ Recorridos
+    List<T> recorrerDFS(INodo<T> inicio)                ;
+    void recorrerBFS(INodo<T> inicio)                   ;
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 }

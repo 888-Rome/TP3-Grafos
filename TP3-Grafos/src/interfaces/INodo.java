@@ -1,20 +1,24 @@
 package interfaces;
 
 // ▶ Importaciones ─────────────────────────────────────────────────────────────────────────────────────────────────────
-import java.util.List;
+import java.util.List   ;
 
-public interface INodo<T extends Comparable<T>> {
+// ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+public interface INodo<T> {
 
     // ▶ Getters ───────────────────────────────────────────────────────────────────────────────────────────────────────
-    public T getDato()                  ;
-    public boolean getVisitado()        ;
-    public List<INodo<T>> getVecinos()  ;
+    boolean isVisitado()                        ;
+    List<INodo<T>> getVecinos()                 ;
+    T getDato()                                 ;
 
     // ▶ Setters ───────────────────────────────────────────────────────────────────────────────────────────────────────
-    public void setDato(T dato)         ;
+    void setVisitado(boolean visitado)          ;
+    void setVecinos(List<INodo<T>> vecinos)     ;
+    void setDato(T dato)                        ;
 
-    // ▶ Otros ─────────────────────────────────────────────────────────────────────────────────────────────────────────
-    public void agregarVecino(INodo<T> nodo)    ;
+    // ▶ Otros Métodos ─────────────────────────────────────────────────────────────────────────────────────────────────
+    void agregarVecino(INodo<T> nodo)           ;
 
 // ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 }
