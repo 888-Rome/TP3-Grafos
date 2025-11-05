@@ -12,7 +12,7 @@ public class Grafo<T extends Comparable<T>> implements IGrafo<T> {
     private List<Nodo<T>> nodos;
 
     // ▶ Constructor ───────────────────────────────────────────────────────────────────────────────────────────────────
-    public Grafo(List<Nodo<T>> nodos) {
+    public Grafo() {
         this.nodos = new ArrayList<>();
     }
 
