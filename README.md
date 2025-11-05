@@ -35,8 +35,15 @@ Crear una clase cualquiera e insertar en un árbol 15 instancias de esa clase. R
 
 ## ❸ | TP3-Grafos |
 ### 📝 Descripción
-Contiene la implementación del TP3, donde se crea un grafo genérico cuyos nodos pueden almacenar cualquier tipo de dato (<T> o Object).
-Incluye métodos para recorrer el grafo con DFS y BFS, y la generación de su matriz de adyacencia. El proyecto utiliza como ejemplo la clase Persona solo para testeo, manteniendo la mayor generalidad posible en la implementación.
+Se pide que se cree un grafo donde todos sus nodos contengan datos del tipo Persona. 
+Incluir la matriz de adyacencia.  
+Recorrer el grafoDFS y BFS. 
+
+#### Responder: 
+- ¿Cómo haría para que el grafo sea dirigido? 
+- ¿Se puede recorrer igual? 
+
+_Recordar que se espera la mayor generalidad posible._
 
 ### 💬 Feedback
 N/A
