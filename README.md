@@ -1,8 +1,8 @@
 # Algoritmos y Estructuras de Datos II
 
 ## 👤 | Créditos |
-_Ximena Romero    ; 888-Rome._
-_Ignacio Venditto ; Nachitto2_
+- _Ximena Romero    ; 888-Rome._
+- _Ignacio Venditto ; Nachitto2_
 
 ## 📢 | Grupo N°13 |
 - Ximena Romero  
