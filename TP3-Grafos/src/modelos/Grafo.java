@@ -130,36 +130,35 @@ public class Grafo<T> implements IGrafo<T> {
 
         System.out.println("\n⌞ Matriz de Adyacencia ⌝\n");
 
-        // Calcula el largo del texto más largo
+        // Calcula el largo del texto más largo (para alinear columnas)
         int largoMax = 0;
         for (INodo<T> nodo : listaNodos) {
             int largo = nodo.getDato().toString().replace("|", "").trim().length();
             if (largo > largoMax) largoMax = largo;
         }
 
+        // ─────────────────────────────────────────────────────────────────────────────
         // Encabezado de columnas
-        System.out.print(" ".repeat(largoMax + 5));
+        System.out.print(" ".repeat(largoMax + 5)); // espacio inicial para alinear con filas
         for (INodo<T> nodo : listaNodos) {
             String nombre = nodo.getDato().toString().replace("|", "").trim();
             System.out.printf("[%-" + largoMax + "s] ", nombre);
         }
-
         System.out.println();
 
-        // Filas
+        // ─────────────────────────────────────────────────────────────────────────────
+        // Filas con nombres y valores de la matriz
         for (int i = 0; i < n; i++) {
-            String nombre = listaNodos.get(i).getDato().toString().replace("|", "").trim();
-            System.out.printf("| %-" + largoMax + "s | ", nombre);
+            String nombreFila = listaNodos.get(i).getDato().toString().replace("|", "").trim();
+            System.out.printf("[%-" + largoMax + "s] ", nombreFila); // etiqueta de fila
 
             for (int j = 0; j < n; j++) {
-                System.out.printf("[ %d ] ", matriz[i][j]);
+                System.out.printf("%" + (largoMax + 2) + "d ", matriz[i][j]); // valor de la matriz
             }
-
             System.out.println();
         }
-
-        System.out.println();
     }
+
 
     // ▶ Recorridos
     /* Método para recorrer por profundidad.
