@@ -1,7 +1,7 @@
 package test;
 
 // ▶ Importaciones ─────────────────────────────────────────────────────────────────────────────────────────────────────
-import interfaces.INodo;
+import interfaces.INodo ;
 import modelos.Grafo    ;
 import modelos.Persona  ;
 
